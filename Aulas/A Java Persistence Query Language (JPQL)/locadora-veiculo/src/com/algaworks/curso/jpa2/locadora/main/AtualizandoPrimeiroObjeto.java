@@ -13,7 +13,7 @@ public class AtualizandoPrimeiroObjeto {
 		Pessoa pessoa = em.find(Pessoa.class, 2L);
 		if (pessoa != null) {
 			em.getTransaction().begin();
-			pessoa.setNome("Maria José");
+			pessoa.setNome("Maria JosÃ©");
 			em.getTransaction().commit();
 		}
 	}

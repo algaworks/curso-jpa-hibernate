@@ -17,7 +17,7 @@ public class ConsultandoComNamedQuery {
 		
 		for (Pessoa pessoa : pessoas) {
 			System.out.println("-------------------------");
-			System.out.println("Código: " + pessoa.getCodigo());
+			System.out.println("CÃ³digo: " + pessoa.getCodigo());
 			System.out.println("Nome: " + pessoa.getNome());
 		}
 	}
