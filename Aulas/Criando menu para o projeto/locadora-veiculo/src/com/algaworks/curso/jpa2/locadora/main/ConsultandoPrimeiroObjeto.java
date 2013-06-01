@@ -13,7 +13,7 @@ public class ConsultandoPrimeiroObjeto {
 		Pessoa pessoa = em.find(Pessoa.class, 2L);
 		
 		if (pessoa != null) {
-			System.out.println("Codigo: " + pessoa.getCodigo());
+			System.out.println("Código: " + pessoa.getCodigo());
 			System.out.println("Nome: " + pessoa.getNome());
 			System.out.println("CPF: " + pessoa.getCpf());
 			System.out.println("Data nascimento: " + pessoa.getDataNascimento());

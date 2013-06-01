@@ -13,7 +13,7 @@ public class AlterandoPrimeiroObjeto {
 		Pessoa pessoa = em.find(Pessoa.class, 1L);
 		
 		em.getTransaction().begin();
-		pessoa.setNome("Maria José");
+		pessoa.setNome("Maria JosÃ©");
 		em.getTransaction().commit();
 	}
 	

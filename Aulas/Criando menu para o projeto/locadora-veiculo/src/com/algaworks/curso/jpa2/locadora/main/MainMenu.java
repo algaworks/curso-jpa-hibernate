@@ -2,7 +2,7 @@ package com.algaworks.curso.jpa2.locadora.main;
 
 import java.util.Scanner;
 
-import com.algaworks.curso.jpa2.locadora.main.cadastros.menu.MenuCadastros;
+import com.algaworks.curso.jpa2.locadora.main.cadastro.MenuCadastros;
 
 public class MainMenu {
 
@@ -22,19 +22,22 @@ public class MainMenu {
 				System.out.println("Obrigado.");
 				break;
 			default:
-				System.out.println("OpÁ„o inv·lida! Tente novamente.");
+				System.out.println("Op√ß√£o inv√°lida. Tente novamente.");
 			}
+			
+			
+			
 		} while (opcao != 0);
-		
 	}
-	
+
 	private static void imprimirOpcoesMenu() {
+		System.out.println();
 		System.out.println("***********************************");
-		System.out.println("*** Locadora VeÌculos Algaworks ***");
+		System.out.println("*** Locadora Ve√≠culos Algaworks ***");
 		System.out.println("***********************************");
 		System.out.println("0. Sair");
 		System.out.println("1. Cadastros");
-		System.out.print("OpÁ„o: ");
+		System.out.print("Op√ß√£o: ");
 	}
 	
 }
