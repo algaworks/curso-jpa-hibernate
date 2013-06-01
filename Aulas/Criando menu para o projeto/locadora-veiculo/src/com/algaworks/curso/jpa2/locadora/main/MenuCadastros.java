@@ -1,4 +1,4 @@
-package com.algaworks.curso.jpa2.locadora.main.cadastro;
+package com.algaworks.curso.jpa2.locadora.main;
 
 import java.util.Scanner;
 
@@ -8,27 +8,20 @@ public class MenuCadastros {
 	
 	public MenuCadastros(Scanner entrada) {
 		this.entrada = entrada;
-		
+
 		processarMenu();
-	}
-	
-	private void imprimirOpcoesMenu() {
-		System.out.println();
-		System.out.println("*** Cadastros ***");
-		System.out.println("0. Voltar");
-		System.out.println("1. Fabricante");
-		System.out.print("Opção: ");
 	}
 	
 	public void processarMenu() {
 		int opcao;
+		
 		do {
 			imprimirOpcoesMenu();
 			opcao = entrada.nextInt();
 			
 			switch (opcao) {
 			case 1:
-				new CadastroFabricante(entrada);
+				new MenuCadastroFabricante(entrada);
 				continue;
 			case 0:
 				break;
@@ -39,5 +32,12 @@ public class MenuCadastros {
 		} while (opcao != 0);
 	}
 
-
+	private void imprimirOpcoesMenu() {
+		System.out.println();
+		System.out.println("*** Cadastros ***");
+		System.out.println("0. Voltar");
+		System.out.println("1. Fabricante");
+		System.out.print("Opção: ");
+	}
+	
 }

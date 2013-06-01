@@ -1,4 +1,4 @@
-package com.algaworks.curso.jpa2.locadora.main.dao;
+package com.algaworks.curso.jpa2.locadora.dao;
 
 import javax.persistence.EntityManager;
 
@@ -6,13 +6,14 @@ import com.algaworks.curso.jpa2.locadora.util.JPAUtil;
 
 public class DAOFactory {
 
-	private static EntityManager entityManager;
+	private static EntityManager em;
 	
 	static {
-		entityManager = JPAUtil.getEntityManager();
+		em = JPAUtil.getEntityManager();
 	}
 	
 	public static FabricanteDAO getFabricanteDAO() {
-		return new FabricanteDAO(entityManager);
+		return new FabricanteDAO(em);
 	}
+	
 }

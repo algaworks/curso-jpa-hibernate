@@ -1,4 +1,4 @@
-package com.algaworks.curso.jpa2.locadora.main.dao;
+package com.algaworks.curso.jpa2.locadora.dao;
 
 import javax.persistence.EntityManager;
 
@@ -11,11 +11,11 @@ public class FabricanteDAO {
 	public FabricanteDAO(EntityManager em) {
 		this.em = em;
 	}
-
+	
 	public void salvar(Fabricante fabricante) {
-		em.getTransaction().begin();
-		em.persist(fabricante);
-		em.getTransaction().commit();
+		this.em.getTransaction().begin();
+		this.em.persist(fabricante);
+		this.em.getTransaction().commit();
 	}
 	
 }
