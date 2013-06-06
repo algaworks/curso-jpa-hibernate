@@ -20,7 +20,8 @@ public class MenuCadastroAcessorio {
 	
 	private void preencherFormulario() {
 		System.out.print("Descrição: ");
-		String descricao = this.entrada.next();
+		this.entrada.nextLine(); // Para pegar o "ENTER" "perdido"
+		String descricao = this.entrada.nextLine();
 		
 		Acessorio acessorio = new Acessorio();
 		acessorio.setDescricao(descricao);

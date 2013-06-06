@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
 @Entity
 public class Acessorio {
@@ -12,7 +13,11 @@ public class Acessorio {
 	private String descricao;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.TABLE)
+	@TableGenerator(name="Gerador_Acessorio"
+			, initialValue=1
+			, allocationSize=5
+			, table="GERADOR_CODIGO")
+	@GeneratedValue(strategy=GenerationType.TABLE, generator="Gerador_Acessorio")
 	public Long getCodigo() {
 		return codigo;
 	}

@@ -1,7 +1,6 @@
 package com.algaworks.curso.jpa2.locadora.main;
 
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class MenuPrincipal {
  
