@@ -10,7 +10,6 @@ public class MeuBean implements Serializable {
 	private String nome;
 
 	public void transformar() {
-		System.out.println("adlfjalsdjfkl");
 		this.nome = this.nome.toUpperCase();
 	}
 	
