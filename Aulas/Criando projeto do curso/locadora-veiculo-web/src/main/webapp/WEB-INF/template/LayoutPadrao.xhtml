@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="titulo">Sistema de Locadora de Veículo</ui:insert></title>
+        <h:outputStylesheet library="css" name="sistema.css" />
+	</h:head>
+
+	<h:body>
+		<p:ajaxStatus styleClass="ajax-status">
+			<f:facet name="start">
+				<h:graphicImage library="imagens" name="carregando.gif"/>
+			</f:facet>
+			<f:facet name="complete">
+				<h:outputText value=""/>
+			</f:facet>
+		</p:ajaxStatus>
+	
+		<header>
+			<div style="float: left">
+				<h:link outcome="/Home">
+					<h:graphicImage library="imagens" name="logo-algaworks.png" />
+				</h:link>
+			</div>
+			
+			<div style="float: right; margin-right: 110px">
+				<h:form style="display: inline-block">
+					<p:menubar styleClass="menu-sistema">
+						<p:submenu label="Cadastros">
+							<p:menuitem value="Fabricante" />
+							<p:menuitem value="Modelo Carro"  />
+							<p:menuitem value="Acessório" />
+							<p:menuitem value="Carro" />
+							<p:separator/>
+							<p:menuitem value="Funcionário" />
+							<p:menuitem value="Motorista" />
+						</p:submenu>
+						<p:menuitem value="Novo Aluguel" />
+						<p:submenu label="Relatórios">
+							<p:menuitem value="Receita por carro" />
+						</p:submenu>
+					</p:menubar>
+				</h:form>
+			</div>
+			<div style="clear: both"></div>
+		</header>
+		
+		<div id="conteudo">
+			<ui:insert name="corpo"/>
+		</div>
+	
+		<p:separator style="margin-top: 20px"/>
+	
+		<footer>
+			Curso Online de Persistência de Dados com JPA 2 e Hibernate -
+			<a href="http://bit.ly/VJTAnC" target="_blank">www.algaworks.com</a>
+		</footer>
+	</h:body>
+
+</html>
