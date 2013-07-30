@@ -1,4 +1,5 @@
+.metadata/
+bin/
 .class
 .settings/
-bin/
 target/
