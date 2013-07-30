@@ -4,4 +4,8 @@
 		xmlns:s="urn:java:ee" 
 		xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
 
+	<interceptors>
+		<class>com.algaworks.curso.jpa2.util.jpa.TransactionInterceptor</class>
+	</interceptors>
+	
 </beans>
