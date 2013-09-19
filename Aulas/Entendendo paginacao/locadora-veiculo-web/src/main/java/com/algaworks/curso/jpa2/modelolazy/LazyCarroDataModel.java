@@ -1,4 +1,4 @@
-package com.algaworks.curso.jpa2.util.modelo;
+package com.algaworks.curso.jpa2.modelolazy;
 
 import java.io.Serializable;
 import java.util.List;
@@ -17,13 +17,13 @@ public class LazyCarroDataModel extends LazyDataModel<Carro> implements Serializ
 	public LazyCarroDataModel(CarroDAO carroDAO) {
 		this.carroDAO = carroDAO;
 	}
-
+	
 	@Override
 	public List<Carro> load(int first, int pageSize, String sortField,
 			SortOrder sortOrder, Map<String, String> filters) {
 		List<Carro> carros = this.carroDAO.buscarComPaginacao(first, pageSize);
 		
-		this.setRowCount(this.carroDAO.encontrarQuantidadeCarros().intValue());
+		this.setRowCount(this.carroDAO.encontrarQuantidadeDeCarros().intValue());
 		
 		return carros;
 	}

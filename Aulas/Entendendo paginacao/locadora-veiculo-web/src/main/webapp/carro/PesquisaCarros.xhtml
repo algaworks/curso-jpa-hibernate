@@ -22,7 +22,7 @@
 	    	<p:dataTable id="carrosTable" value="#{pesquisaCarroBean.lazyCarros}" var="carro"
 		    		style="margin-top: 20px" emptyMessage="Nenhum carro encontrado." rows="5"
 		    		paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom"
-		    		rowsPerPageTemplate="5,10,15" lazy="true" >
+		    		lazy="true" rowsPerPageTemplate="5,10,15">
 		    		
 		    		<p:column headerText="Código" style="text-align: center; width: 100px">
 		    			<h:outputText value="#{carro.codigo}" />
