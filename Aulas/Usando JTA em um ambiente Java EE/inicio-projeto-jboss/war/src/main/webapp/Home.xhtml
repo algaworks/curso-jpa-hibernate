@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+	
+	<h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Projeto Java EE</title>
+	</h:head>
+
+	<h:body>
+	    <h1>Cadastro contato</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel>Nome:</h:outputLabel>
+                <h:inputText value="#{cadastroClienteBean.cliente.nome}" />
+                
+                <h:outputLabel>Idade:</h:outputLabel>
+                <h:inputText value="#{cadastroClienteBean.cliente.idade}" />
+                
+                <h:outputLabel>Sexo:</h:outputLabel>
+                <h:inputText value="#{cadastroClienteBean.cliente.sexo}" />
+                
+                <h:outputLabel>Profissão:</h:outputLabel>
+                <h:inputText value="#{cadastroClienteBean.cliente.profissao}" />
+            </h:panelGrid>
+            <h:commandButton value="Salvar" action="#{cadastroClienteBean.salvar}"/>
+        </h:form>
+    
+    	<br/>    
+	        
+        <h:dataTable value="#{cadastroClienteBean.clientes}" var="cliente" border="1" cellpadding="5">
+        	<h:column>
+        		<h:outputText value="#{cliente.codigo}"/>
+        	</h:column>
+        	<h:column>
+        		<h:outputText value="#{cliente.nome}"/>
+        	</h:column>
+        	<h:column>
+        		<h:outputText value="#{cliente.idade}"/>
+        	</h:column>
+        	<h:column>
+        		<h:outputText value="#{cliente.sexo}"/>
+        	</h:column>
+        	<h:column>
+        		<h:outputText value="#{cliente.profissao}"/>
+        	</h:column>
+        </h:dataTable>
+	</h:body>
+</html>
