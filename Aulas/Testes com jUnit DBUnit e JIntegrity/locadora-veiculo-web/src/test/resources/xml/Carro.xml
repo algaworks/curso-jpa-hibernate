@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<carro codigo="1" placa="AAA-1111" valorDiaria="200.0" dataCriacao="2013-10-12 10:00:00"/>
+</dataset>
