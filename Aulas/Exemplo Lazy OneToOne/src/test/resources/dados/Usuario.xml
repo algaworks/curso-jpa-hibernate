@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<usuario codigo="1" nome="João" />
+	<usuario codigo="2" nome="Maria" />
+</dataset>
