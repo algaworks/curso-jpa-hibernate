@@ -1,0 +1,38 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Relatório</ui:define>
+    
+    <ui:define name="corpo">
+    	<h1>Total ganho em aluguéis no mês</h1>
+    	
+    	<h:form id="frmFiltro">
+    		<p:messages id="messages" autoUpdate="true" closable="true" />
+    		
+    		<p:toolbar style="margin-top: 20px">
+    			<p:toolbarGroup>
+					<p:commandButton value="Pesquisa" id="botaoPesquisa" action="#{relatorioAluguelBean.buscarTotalAlugueisNoMes}" update="@form"/>
+				</p:toolbarGroup>
+    		</p:toolbar>
+    		
+    		<p:panelGrid columns="2" id="painel" style="width: 100%" columnClasses="rotulo, campo">
+			    <p:outputLabel value="Mês" for="mes"/>
+			    <p:selectOneMenu id="mes" value="#{relatorioAluguelBean.mesSelecionado}">
+	    			<f:selectItems value="#{relatorioAluguelBean.meses}" var="mes" 
+						itemLabel="#{mes}" itemValue="#{mes}"/>
+	    		</p:selectOneMenu>
+			</p:panelGrid>
+			
+			<h:panelGroup rendered="#{relatorioAluguelBean.mesSelecionado != null}">
+				<h3>Total ganho no mês</h3>
+			
+				<h:outputText value="R$ #{relatorioAluguelBean.totalDoMes}" style="font-weight: bold;" />
+			</h:panelGroup>
+
+		</h:form>
+    </ui:define>
+</ui:composition>
