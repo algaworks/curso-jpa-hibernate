@@ -1,0 +1,37 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+    <ui:define name="titulo">Total de alugueis por carro</ui:define>
+    
+    <ui:define name="corpo">
+    	<h1>Total de alugueis por carro</h1>
+    	
+    	<h:form id="frmPesquisa">
+    		<p:messages id="messages" autoUpdate="true" closable="true" />
+    		
+    		<p:toolbar style="margin-top: 20px">
+    			<p:toolbarGroup>
+    				<p:commandButton value="Pesquisa" id="botaoNovo" action="#{relatorioTotalAlgueisPorCarroBean.buscar}" update="@form"/>
+    			</p:toolbarGroup>
+    		</p:toolbar>
+    	
+	    	<p:dataTable id="carrosTable" value="#{relatorioTotalAlgueisPorCarroBean.totalDeAlugueisPorCarro}" 
+	    			var="total"
+		    		style="margin-top: 20px" emptyMessage="Nenhum carro encontrado." rows="5"
+		    		paginator="true" paginatorAlwaysVisible="false" paginatorPosition="bottom">
+		    		
+		    		<p:column headerText="Placa">
+		    			<h:outputText value="#{total.placa}" />
+		    		</p:column>
+		    		<p:column headerText="Quantidade de alugueis">
+		    			<h:outputText value="#{total.totalDeAlugueis}" />
+		    		</p:column>
+		    </p:dataTable>
+		   	    	
+	    </h:form>
+    </ui:define>
+</ui:composition>
