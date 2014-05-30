@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+  <fatura codigo="1" valor="100" vencimento="2013-01-02" vencida="0"/>
+  <fatura codigo="2" valor="200" vencimento="2015-06-15" vencida="0"/>
+  <fatura codigo="3" valor="140" vencimento="2013-02-10" vencida="0"/>
+</dataset>
