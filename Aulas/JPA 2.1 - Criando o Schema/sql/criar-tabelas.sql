@@ -1,0 +1,1 @@
+create table endereco (codigo bigint primary key auto_increment, rua varchar(100));
