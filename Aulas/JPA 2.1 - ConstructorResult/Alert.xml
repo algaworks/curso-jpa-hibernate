@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<alert codigo="1" codigo_usuario="1" register_date="2014-05-29 10:10:02" />
+	<alert codigo="2" codigo_usuario="1" register_date="2014-05-30 13:44:12" />
+	<alert codigo="3" codigo_usuario="2" register_date="2014-05-28 09:01:10" />
+	<alert codigo="4" codigo_usuario="2" register_date="2014-05-29 11:22:32" />
+	<alert codigo="5" codigo_usuario="2" register_date="2014-05-30 14:00:01" />
+</dataset>
