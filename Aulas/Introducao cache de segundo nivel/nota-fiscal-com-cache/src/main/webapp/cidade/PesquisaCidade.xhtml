@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa de Cidade</ui:define>
+
+	<ui:define name="corpo">
+		<h1>Pesquisa de Cidade</h1>
+
+		<h:form id="frmCadastro">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+
+			<p:dataTable value="#{pesquisaCidadeBean.listaCidades}" var="cidade"
+		    		style="margin-top: 20px" emptyMessage="Nenhuma cidade encontrada.">
+		    	
+		    	<p:column headerText="Código">
+		    		<h:outputText value="#{cidade.codigo}"/>
+		    	</p:column>
+		    	<p:column headerText="Nome">
+		    		<h:outputText value="#{cidade.nome}"/>
+		    	</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>

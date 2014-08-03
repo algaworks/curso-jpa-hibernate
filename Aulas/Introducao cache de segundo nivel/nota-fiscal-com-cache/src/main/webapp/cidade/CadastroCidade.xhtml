@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui">
+
+	<ui:define name="titulo">Cadastro de Cidade</ui:define>
+
+	<ui:define name="corpo">
+		<h1>Cadastro de Cidade</h1>
+
+		<h:form id="frmCadastro">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+
+			<p:toolbar style="margin-top: 20px">
+				<f:facet name="left">
+					<p:commandButton value="Salvar" action="#{cadastroCidadeBean.salvar}" update="@form" />
+				</f:facet>
+			</p:toolbar>
+
+			<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				<p:outputLabel value="Estado" for="estado"/>
+				<p:selectOneMenu id="estado" value="#{cadastroCidadeBean.cidade.estado}">
+					<f:selectItem itemLabel="Selecione o estado" />
+					<f:selectItems value="#{cadastroCidadeBean.listaEstados}" var="estado" 
+					itemLabel="#{estado.nome}" itemValue="#{estado}"/>
+				</p:selectOneMenu>
+				
+				<p:outputLabel value="Nome" for="nome" />
+				<h:inputText id="nome" value="#{cadastroCidadeBean.cidade.nome}" />
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
