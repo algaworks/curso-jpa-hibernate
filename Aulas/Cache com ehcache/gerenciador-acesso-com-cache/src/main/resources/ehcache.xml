@@ -1,0 +1,12 @@
+<ehcache>
+	<diskStore path="/opt/cache" />
+	<defaultCache 
+		maxElementsInMemory="1000" 
+		eternal="false"
+		timeToIdleSeconds="60" 
+		timeToLiveSeconds="120" 
+		overflowToDisk="true"
+		maxElementsOnDisk="100000" 
+		diskExpiryThreadIntervalSeconds="120" 
+		memoryStoreEvictionPolicy="LRU" />
+</ehcache>
