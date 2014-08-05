@@ -1,0 +1,41 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui">
+
+	<f:metadata>
+		<o:viewParam name="usuario" value="#{cadastroUsuarioBean.usuario}" />
+	</f:metadata>
+	
+	<ui:define name="titulo">Cadastro usuário</ui:define>
+
+	<ui:define name="corpo">
+		<h1>Cadastro usuário</h1>
+		
+		<h:form id="frmCadastro">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+			
+			<p:toolbar style="margin-top: 20px">
+				<f:facet name="left">
+    				<p:commandButton value="Salvar" actionListener="#{cadastroUsuarioBean.salvar}" ajax="false" />
+				</f:facet>
+    		</p:toolbar>
+    		
+			<p:panelGrid columns="2" id="painel" style="width: 100%" columnClasses="rotulo, campo">
+				<p:outputLabel value="Código" for="codigo"/>
+			    <p:inputText id="codigo" size="20" maxlength="20" value="#{cadastroUsuarioBean.usuario.codigo}" readonly="true"/>
+			    
+			    <p:outputLabel value="Nome" for="nome"/>
+			    <p:inputText id="nome" value="#{cadastroUsuarioBean.usuario.nome}" />
+			    
+			    <p:outputLabel value="Status" for="status"/>
+			    <p:selectOneMenu id="status" value="#{cadastroUsuarioBean.usuario.status}">
+			    	<f:selectItems value="#{cadastroUsuarioBean.statusList}"/>
+			    </p:selectOneMenu>
+			</p:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
