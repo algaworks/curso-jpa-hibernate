@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<usuario_grupo codigo_usuario="1" codigo_grupo="1" />
+	<usuario_grupo codigo_usuario="1" codigo_grupo="2" />
+	<usuario_grupo codigo_usuario="2" codigo_grupo="2" />
+</dataset>

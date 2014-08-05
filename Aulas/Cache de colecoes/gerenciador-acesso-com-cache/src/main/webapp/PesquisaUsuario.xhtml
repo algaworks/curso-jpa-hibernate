@@ -1,0 +1,39 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa usuário</ui:define>
+
+	<ui:define name="corpo">
+		<h1>Pesquisa usuário</h1>
+
+		<h:form id="frmPesquisa">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+			<p:toolbar style="margin-top: 20px">
+				<f:facet name="left">
+    				<p:commandButton value="Pesquisar" actionListener="#{pesquisaUsuarioBean.pesquisar}" update="@form"/>
+				</f:facet>
+    		</p:toolbar>
+		
+			<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				<p:outputLabel value="Código" for="codigoUsuario"/>
+				<h:inputText id="codigoUsuario" value="#{pesquisaUsuarioBean.codigoUsuario}"/>
+				
+				<p:outputLabel value="Nome"/>
+				<h:outputText value="#{pesquisaUsuarioBean.usuario.nome}"/>
+			</p:panelGrid>
+			
+			<p:dataTable value="#{pesquisaUsuarioBean.usuario.grupos}" var="grupo"
+		    		style="margin-top: 20px" emptyMessage="Pesquise um usuário para ver seus grupos.">
+		    	
+		    	<p:column headerText="Grupo">
+		    		<h:outputText value="#{grupo.nome}"/>
+		    	</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
