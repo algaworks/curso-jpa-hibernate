@@ -1,0 +1,40 @@
+1. Driver do MySQL
+
+<WILDFLY_HOM>/modules/system/layers/base/com/mysql/main/module.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.1" name="com.mysql">
+  <resources>
+      <resource-root path="mysql-connector-java-5.1.31-bin.jar"/>
+  </resources>
+  <dependencies>
+      <module name="javax.api"/>
+      <module name="javax.transaction.api"/>
+      <module name="javax.servlet.api" optional="true"/>
+  </dependencies>
+</module>
+
+- Não se esqueça de copiar o arquivo .jar.
+
+------------------------------------------------------------------------------------------------
+
+2. Datasource
+
+<datasource jta="true" jndi-name="java:jboss/datasources/gerenciador-acesso-ds" pool-name="gerenciador_acesso" enabled="true" use-java-context="true">
+  <connection-url>jdbc:mysql://localhost:3306/gerenciador_acesso</connection-url>
+  <driver>mysql</driver>
+    <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+    <pool>
+        <min-pool-size>10</min-pool-size>
+        <max-pool-size>100</max-pool-size>
+    </pool>
+    <security>
+        <user-name>root</user-name>
+        <password>root</password>
+    </security>
+</datasource>
+
+
+<driver name="mysql" module="com.mysql">
+  <driver-class>com.mysql.jdbc.Driver</driver-class>
+</driver>
