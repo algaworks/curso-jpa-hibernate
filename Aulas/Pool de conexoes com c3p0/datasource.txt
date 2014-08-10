@@ -1,0 +1,11 @@
+    <Resource auth="Container"
+          driverClass="com.mysql.jdbc.Driver"
+              maxPoolSize="4" 
+              minPoolSize="2"
+              acquireIncrement="1"
+          name="jdbc/GerenciadorAcessoDB"  
+              user="root" 
+              password="root" 
+              factory="org.apache.naming.factory.BeanFactory"
+          type="com.mchange.v2.c3p0.ComboPooledDataSource"
+              jdbcUrl="jdbc:mysql://localhost:3306/gerenciador_acesso" />
