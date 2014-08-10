@@ -1,0 +1,69 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui">
+
+	<f:metadata>
+		<o:viewParam name="pedido" value="#{cadastroPedidoBean.pedido}" />
+	</f:metadata>
+	
+	<ui:define name="titulo">Cadastro pedido</ui:define>
+
+	<ui:define name="corpo">
+		<h1>Cadastro pedido</h1>
+		
+		<h:form id="frmCadastro">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+			
+			<p:toolbar style="margin-top: 20px">
+				<f:facet name="left">
+    				<p:commandButton value="Salvar" actionListener="#{cadastroPedidoBean.salvar}" update="@form"/>
+				</f:facet>
+				<f:facet name="right">
+    				<p:button value="Pesquisa" outcome="/PesquisaPedido.xhtml"/>
+				</f:facet>
+    		</p:toolbar>
+    		
+			<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+				<p:outputLabel value="Código"/>
+			    <h:outputText value="#{cadastroPedidoBean.pedido.codigo}" />
+			    
+			    <p:outputLabel value="Data da venda"/>
+			    <h:outputText value="#{cadastroPedidoBean.pedido.dataVenda}">
+			    	<f:convertDateTime pattern="dd/MM/yyyy"/>
+			    </h:outputText>
+			    
+			    <p:outputLabel value="Valor total" />
+			    <h:outputText value="#{cadastroPedidoBean.pedido.valorTotal}"/>
+			    
+			    <p:outputLabel value="Referência" for="referencia"/>
+			    <h:inputText id="referencia" value="#{cadastroPedidoBean.pedido.referencia}"/>
+			    
+			    <p:outputLabel value="Entrega" for="entrega"/>
+			    <p:selectOneMenu id="entrega" value="#{cadastroPedidoBean.pedido.entrega}">
+			    	<f:selectItems value="#{cadastroPedidoBean.entregas}"/>
+			    </p:selectOneMenu>
+			</p:panelGrid>
+			
+			<p:commandButton style="margin-top: 20px" value="Adicionar item" actionListener="#{cadastroPedidoBean.pedido.adicionarNovoItem}" update="itemTable"/>			
+			
+    		<p:dataTable id="itemTable" value="#{cadastroPedidoBean.pedido.itensPedido}" var="item"
+		    		style="margin-top: 20px" emptyMessage="Adicione um novo item.">
+		    	
+		    	<p:column headerText="Descrição">
+		    		<h:inputText size="60" value="#{item.descricao}"/>
+		    	</p:column>
+		    	<p:column headerText="Quantidade">
+		    		<h:inputText size="60" value="#{item.quantidade}"/>
+		    	</p:column>
+		    	<p:column headerText="Valor unitário">
+		    		<h:inputText size="60" value="#{item.valor}"/>
+		    	</p:column>
+			</p:dataTable>
+			
+		</h:form>
+	</ui:define>
+</ui:composition>

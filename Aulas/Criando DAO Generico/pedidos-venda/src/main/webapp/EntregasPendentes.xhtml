@@ -1,0 +1,32 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui" 
+	xmlns:o="http://omnifaces.org/ui">
+
+	<f:metadata>
+		<f:viewAction action="#{entregasPendentesBean.buscarItensPendentes}" />
+	</f:metadata>
+
+	<ui:define name="titulo">Itens pendentes</ui:define>
+
+	<ui:define name="corpo">
+		<h1>Itens pendentes</h1>
+
+		<p:dataTable value="#{entregasPendentesBean.itensPendentes}" var="item"
+			style="margin-top: 20px" emptyMessage="Nenhum item pendente para entrega">
+
+			<p:column headerText="Código pedido">
+				<h:outputText value="#{item.pedido.codigo}" />
+			</p:column>
+			<p:column headerText="Descrição">
+				<h:outputText value="#{item.descricao}" />
+			</p:column>
+			<p:column headerText="Quantidade">
+				<h:outputText value="#{item.quantidade}" />
+			</p:column>
+		</p:dataTable>
+	</ui:define>
+</ui:composition>
