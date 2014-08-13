@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<grupo codigo="1" nome="ADMINISTRADOR" />
+	<grupo codigo="2" nome="VENDEDOR" />
+</dataset>
