@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+   <!-- disable storage of sessions across restarts --> 
+   <Manager pathname=""/>
+   <Resource name="BeanManager" auth="Container" type="javax.enterprise.inject.spi.BeanManager" factory="org.jboss.weld.resources.ManagerObjectFactory"/>
+   <!-- Uncomment to enable injection into Servlets, Servlet Listeners and Filters in Tomcat -->
+   <!-- <Listener className="org.jboss.weld.environment.tomcat.WeldLifecycleListener"/>-->
+   
+    <Resource auth="Container"
+    		  driverClass="com.mysql.jdbc.Driver"
+              maxPoolSize="4" 
+              minPoolSize="2" 
+              acquireIncrement="1"
+    		  name="jdbc/imperio-rodas"  
+              user="root" 
+              password="root" 
+              factory="org.apache.naming.factory.BeanFactory"
+    		  type="com.mchange.v2.c3p0.ComboPooledDataSource"
+              jdbcUrl="jdbc:mysql://imperio-rodas.localhost:3306/gerenciador_acesso" />
+   
+       <Resource auth="Container"
+    		  driverClass="com.mysql.jdbc.Driver"
+              maxPoolSize="4" 
+              minPoolSize="2" 
+              acquireIncrement="1"
+    		  name="jdbc/padaria-real"  
+              user="root" 
+              password="root" 
+              factory="org.apache.naming.factory.BeanFactory"
+    		  type="com.mchange.v2.c3p0.ComboPooledDataSource"
+              jdbcUrl="jdbc:mysql://padaria-real.localhost:3306/gerenciador_acesso2" />
+   
+</Context>
