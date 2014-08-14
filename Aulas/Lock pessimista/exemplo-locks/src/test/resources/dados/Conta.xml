@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataset>
+	<conta codigo="1" numero="1010" saldo="100" />
+	<conta codigo="2" numero="2020" saldo="200" />
+</dataset>
