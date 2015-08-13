@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Manager pathname="" />
+	
+	<Resource name="BeanManager" auth="Container"
+		type="javax.enterprise.inject.spi.BeanManager" factory="org.jboss.weld.resources.ManagerObjectFactory" />
+		
+	<Resource name="jdbc/locadoraDB" auth="Container"
+		factory="org.apache.naming.factory.BeanFactory" type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		driverClass="com.mysql.jdbc.Driver" jdbcUrl="jdbc:mysql://localhost:3306/locadora"
+		user="root" password="root" minPoolSize="2" maxPoolSize="2" />
+</Context>

@@ -1,0 +1,41 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:o="http://omnifaces.org/ui">
+
+    <ui:define name="titulo">#{cadastroAcessorioBean.editando ? 'Edição acessório' : 'Novo acessório'}</ui:define>
+    
+    <ui:define name="corpo">
+    	<f:metadata>
+			<o:viewParam name="acessorio" value="#{cadastroAcessorioBean.acessorio}" converter="acessorioConverter" />
+			<f:viewAction action="#{cadastroAcessorioBean.inicializar}" />
+		</f:metadata>
+    
+    	<h1>#{cadastroAcessorioBean.editando ? 'Edição acessório' : 'Novo acessório'}</h1>
+    	
+    	<h:form id="frmCadastro">
+    		<p:messages id="messages" autoUpdate="true" closable="true" />
+    	
+	    	<p:toolbar style="margin-top: 20px">
+	    		<p:toolbarGroup>
+	    			<p:commandButton value="Salvar" id="botaoSalvar" action="#{cadastroAcessorioBean.salvar}" update="frmCadastro"/>
+	    		</p:toolbarGroup>
+	    		<p:toolbarGroup align="right">
+					<p:button value="Pesquisa" outcome="/acessorio/PesquisaAcessorios"/>
+				</p:toolbarGroup>
+	    	</p:toolbar>
+	    	
+	    	<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo">
+	    		<p:outputLabel value="Código" for="codigo"/>
+	    		<p:inputText id="codigo" size="20" maxlength="20" value="#{cadastroAcessorioBean.acessorio.codigo}" readonly="true"/>
+	    		
+	    		<p:outputLabel value="Descrição" for="descricao"/>
+	    		<p:inputText id="descricao" size="60" maxlength="80" value="#{cadastroAcessorioBean.acessorio.descricao}"/>
+	    	</p:panelGrid>
+    	</h:form>
+    </ui:define>
+</ui:composition>
