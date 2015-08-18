@@ -44,6 +44,10 @@ public class PesquisaAluguelBean implements Serializable {
 		this.alugueis = aluguelDAO.buscarPorDataDeEntregaEModeloCarro(this.aluguel.getDataEntrega(), this.carro.getModelo());
 	}
 	
+	public void pesquisarCriteria() {
+		this.alugueis = aluguelDAO.buscarPorDataDeEntregaEModeloCarroCriteria(this.aluguel.getDataEntrega(), this.carro.getModelo());
+	}
+	
 	public List<ModeloCarro> getModelosCarros() {
 		return modelosCarros;
 	}
