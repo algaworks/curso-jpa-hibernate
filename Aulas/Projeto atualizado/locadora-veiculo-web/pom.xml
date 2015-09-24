@@ -12,7 +12,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
 		<!-- Hibernate / JPA -->
-		<hibernate.version>4.3.9.Final</hibernate.version>
+		<hibernate.version>4.3.11.Final</hibernate.version>
 		
 		<!-- Driver MySQL -->
 		<mysql.connector.version>5.1.35</mysql.connector.version>
