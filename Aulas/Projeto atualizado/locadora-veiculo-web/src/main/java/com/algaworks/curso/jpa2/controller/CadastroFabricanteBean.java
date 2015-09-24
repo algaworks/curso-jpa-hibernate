@@ -26,7 +26,7 @@ public class CadastroFabricanteBean implements Serializable {
 	private FacesMessages facesMessages;
 	
 	public CadastroFabricanteBean() {
-		this.limpar();
+		limpar();
 	}
 	
 	public void salvar() {
@@ -34,15 +34,9 @@ public class CadastroFabricanteBean implements Serializable {
 			cadastroFabricanteService.salvar(fabricante);
 			facesMessages.info("Fabricante salvo com sucesso!");
 			
-			inicializar();
+			limpar();
 		} catch (NegocioException e) {
 			facesMessages.error(e.getMessage());
-		}
-	}
-	
-	public void inicializar() {
-		if (this.fabricante == null) { // Importante para edição.
-			this.limpar();
 		}
 	}
 	
