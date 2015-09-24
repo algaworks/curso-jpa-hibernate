@@ -25,8 +25,10 @@ public class CadastroFabricanteBean implements Serializable {
 	@Inject
 	private FacesMessages facesMessages;
 	
-	public CadastroFabricanteBean() {
-		limpar();
+	public void inicializar() {
+		if (this.fabricante == null) {
+			limpar();
+		}
 	}
 	
 	public void salvar() {

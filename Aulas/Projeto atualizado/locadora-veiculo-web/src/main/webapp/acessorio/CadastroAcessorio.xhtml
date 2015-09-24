@@ -11,7 +11,7 @@
     <ui:define name="corpo">
     	<f:metadata>
 			<o:viewParam name="acessorio" value="#{cadastroAcessorioBean.acessorio}" converter="acessorioConverter"/>
-			<f:viewAction action="#{cadastroAcessorioBean.inicializar}" />
+			<f:viewAction action="#{cadastroAcessorioBean.inicializar}"/>
 		</f:metadata>
     
     	<h1>#{cadastroAcessorioBean.editando ? 'Edição acessório' : 'Novo acessório'}</h1>

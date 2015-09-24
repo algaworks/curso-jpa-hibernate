@@ -11,6 +11,7 @@
     <ui:define name="corpo">
     	<f:metadata>
 			<o:viewParam name="fabricante" value="#{cadastroFabricanteBean.fabricante}" />
+			<f:viewAction action="#{cadastroFabricanteBean.inicializar}"/>
 		</f:metadata>
     
     	<h1>#{cadastroFabricanteBean.editando ? 'Edição fabricante' : 'Novo fabricante'}</h1>
@@ -23,7 +24,7 @@
 	    			<p:commandButton value="Salvar" id="botaoSalvar" action="#{cadastroFabricanteBean.salvar}" update="frmCadastro"/>
 	    		</p:toolbarGroup>
 	    		<p:toolbarGroup align="right">
-					<p:button value="Pesquisa" outcome="/fabricante/PesquisaFabricantes.xhtml"/>
+					<p:button value="Pesquisa" outcome="/fabricante/PesquisaFabricantes"/>
 				</p:toolbarGroup>
 	    	</p:toolbar>
 	    	

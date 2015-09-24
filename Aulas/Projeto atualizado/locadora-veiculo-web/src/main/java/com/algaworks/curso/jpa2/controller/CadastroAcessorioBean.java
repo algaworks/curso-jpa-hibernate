@@ -24,10 +24,6 @@ public class CadastroAcessorioBean implements Serializable {
 
 	@Inject
 	private FacesMessages facesMessages;
-
-	public CadastroAcessorioBean() {
-		this.limpar();
-	}
 	
 	public void inicializar() {
 		if (this.acessorio == null) {

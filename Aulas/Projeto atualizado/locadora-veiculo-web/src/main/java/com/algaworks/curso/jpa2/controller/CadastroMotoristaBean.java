@@ -30,10 +30,6 @@ public class CadastroMotoristaBean implements Serializable {
 	@Inject
 	private FacesMessages facesMessages;
 
-	public CadastroMotoristaBean() {
-		this.limpar();
-	}
-	
 	public void inicializar() {
 		if (this.motorista == null) {
 			this.limpar();

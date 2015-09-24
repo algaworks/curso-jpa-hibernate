@@ -22,7 +22,7 @@ public class ModeloCarroConverter implements Converter {
 		ModeloCarro retorno = null;
 
 		if (StringUtils.isNotBlank(value)) {
-			retorno = this.modeloCarroDAO.buscarPeloCodigo(new Long(value));
+			retorno = this.modeloCarroDAO.buscarComFabricantePeloCodigo(new Long(value));
 		}
 
 		return retorno;

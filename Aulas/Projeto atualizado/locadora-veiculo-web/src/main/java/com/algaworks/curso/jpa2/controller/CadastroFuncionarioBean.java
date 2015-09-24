@@ -30,10 +30,6 @@ public class CadastroFuncionarioBean implements Serializable {
 	@Inject
 	private FacesMessages facesMessages;
 	
-	public CadastroFuncionarioBean() {
-		this.limpar();
-	}
-	
 	public void inicializar() {
 		if (this.funcionario == null) {
 			this.limpar();

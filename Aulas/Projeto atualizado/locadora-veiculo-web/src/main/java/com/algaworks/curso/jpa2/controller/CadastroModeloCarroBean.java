@@ -37,10 +37,6 @@ public class CadastroModeloCarroBean implements Serializable {
 	@Inject
 	private FacesMessages facesMessages;
 	
-	public CadastroModeloCarroBean() {
-		this.limpar();
-	}
-
 	public void salvar() {
 		try {
 			this.cadastroModeloCarroService.salvar(modeloCarro);
@@ -55,13 +51,9 @@ public class CadastroModeloCarroBean implements Serializable {
 		if (this.modeloCarro == null) {
 			this.limpar();
 		}
-
+		
 		this.fabricantes = fabricanteDAO.buscarTodos();
 		this.categorias = Arrays.asList(Categoria.values());
-	}
-
-	public void limpar() {
-		this.modeloCarro = new ModeloCarro();
 	}
 
 	public ModeloCarro getModeloCarro() {
@@ -82,6 +74,10 @@ public class CadastroModeloCarroBean implements Serializable {
 
 	public boolean isEditando() {
 		return this.modeloCarro.getCodigo() != null;
+	}
+	
+	private void limpar() {
+		this.modeloCarro = new ModeloCarro();
 	}
 
 }
